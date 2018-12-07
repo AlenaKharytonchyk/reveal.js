@@ -1,49 +1,559 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/sky.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+    <link rel="stylesheet" href="lib/css/myStyle.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>CSS pre-processors</h1>
+          <p>by Alena Kharytonchyk</p>
+        </section>
+        <section>
+          <section>
+            <h2>What is css pre-processor?</h2>
+            <p>
+              Program that lets you generate CSS from the preprocessor's own
+              unique syntax
+            </p>
+          </section>
+          <section>
+            <h2>Why do we need preprocessors:</h2>
+            <ul>
+              <li>it can make CSS code more organized</li>
+              <li>code becomes more readeble</li>
+              <li>code is easy to edit</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Types of css preprocessors:</h3>
+            <img src="./deck/less styl sas.png" alt="Less sas stylus" />
+          </section>
+          <section>
+            <img src="./deck/less.png" alt="less picture" />
+            <p>Less is CSS, with just a little more</p>
+          </section>
+          <section>
+						<h3>Prepering</h3>
+						<div class="wrapper">
+            <div class="code">
+              <h4>index.html</h4>
+              <pre class="less">
+								<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Preprocessor Less&lt;/title&gt;
+&lt;link rel="stylesheet" type="text/css"	href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+&lt;header&gt;
+	&lt;h1&gt;LESS is CSS with a little more&lt;/h1&gt;
+&lt;/header&gt;
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+&lt;div class="container"&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, 
+consectetur adipisicing elit, sed do eiusmod.
+	&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	&lt;p&gt;AlenaKh &amp;copy; 2018&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+	<code>
+//Variables
+
+@color-text: black; 			
+@color-header: #00f;  			
+@stringVar:" with a little more";  	
+@fontSize: 24px; 
+@border: 2px solid @color-text;
+	</code>
+</pre>
+						</div>
+					</div>
+          </section>
+          <section>
+						<h3>Variables</h3>
+						<div class="wrapper">
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+					<code>
+//Variables
+
+@color-text: gray; 			
+@color-header: #00f;  			
+@stringVar:" with a little more";  	
+@fontSize: 24px; 
+
+
+h1 {
+	color: @color-header;
+	font-size: @fontSize;
+	text-align: center;  
+}
+footer {
+	color: @color-header;
+}</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+		<code>
+h1 {
+	color: #00f;
+	font-size: 24px;
+	text-align: center;
+}
+footer {
+	color: #00f;
+}
+		</code>
+	</pre>
+						</div>
+					</div>
+          </section>
+          <section>
+            <h3>Variables. Result</h3>
+            <div class="code picture">
+              <h4>output before</h4>
+              <img src="./deck/start.png" alt="index page" />
+              <h4>output after</h4>
+              <img src="./deck/variable.png" alt="page with variables" />
+            </div>
+          </section>
+          <section>
+						<h3>Mixins</h3>
+						<div class="wrapper">
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+				<code>
+//Mixins
+.border {
+	border-top: 1px solid @color-header;
+	border-bottom: 2px dotted @color-header;    
+}
+
+
+h1 {
+	color: @color-header;
+	font-size: @fontSize;
+	.border();
+	text-align: center;  
+}
+footer {
+	color: @color-header;
+}
+</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+		<code>
+...
+h1 {
+	color: #00f;
+	font-size: 24px;
+	text-align: center;
+	border-top: 1px solid #00f;
+	border-bottom: 2px dotted #00f;
+}
+...
+</code>
+</pre>
+						</div>
+						</div>
+          </section>
+          <section>
+            <h3>Mixins. Result</h3>
+            <div class="code picture">
+              <h4>output before</h4>
+              <img src="./deck/variable.png" alt="page with variables" />
+              <h4>output after</h4>
+              <img src="./deck/mixins.png" alt="page with mixins" />
+            </div>
+          </section>
+          <section>
+						<h3>Mixins with params</h3>
+						<div class="wrapper">
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+				<code>
+//Mixins
+.button(@width, @border-radius) {
+	width:@width;
+	height:@width*.5;
+	border: 1px solid green;
+	border-radius: @border-radius;
+}
+
+.btn-small {
+	.button(100px, 5px);
+}
+.btn-normal {
+	.button(200px, 20px);
+}
+.btn-big {
+	.button(500px, 40px);
+}
+</code></pre>
+						</div>
+						
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+		<code>
+.btn-small {
+	width: 100px;
+	height: 50px;
+	border: 1px solid green;
+	border-radius: 5px;
+}
+.btn-normal {
+	width: 200px;
+	height: 100px;
+	border: 1px solid green;
+	border-radius: 20px;
+}
+.btn-big {
+	width: 500px;
+	height: 250px;
+	border: 1px solid green;
+	border-radius: 40px;
+}
+</code>
+</pre>
+            </div>
+						</div>
+					</section>
+          <section>
+            <h3>Mixins. Result</h3>
+            <div class="code picture">
+              <h4>output</h4>
+              <img
+                src="./deck/buttons.png"
+                alt="page with mixins with parameters"
+              />
+            </div>
+          </section>
+          <section>
+						<h3>Nesting</h3>
+						<div class="wrapper">
+	           <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+					<code>
+...
+header {
+
+	h1 {
+		color: @color-header;
+		font-size: @fontSize;
+		text-align: center;
+		.border();
+
+		&:after {
+			content: @stringVar;
+		}
+	}
+}
+...
+	</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+			<code>
+...	
+header h1 {
+color: #00f;
+font-size: 24px;
+text-align: center;
+border-top: 1px solid #00f;
+border-bottom: 2px dotted #00f;
+}
+
+header h1:after {
+	content: " with a little more";
+}
+...
+	</code>
+	</pre>
+						</div>
+						</div>
+          </section>
+          <section>
+            <h3>Nesting. Result</h3>
+            <div class="code picture">
+              <h4>output before</h4>
+              <img src="./deck/mixins.png" alt="page with mixins" />
+              <h4>output after</h4>
+              <img src="./deck/nesting.png" alt="page with nesting" />
+            </div>
+          </section>
+          <section>
+            <h3>Math operations</h3>
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+			<code>
+5cm + 10mm; // result is 6cm
+2 - 3cm - 5mm; // result is -1.5cm
+
+// conversion is impossible
+2 + 5px - 3cm; // result is 4px
+			</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+						<code>
+...
+.container {
+	p {
+		padding: @padding @padding+20px;
+	}
+}
+...
+		</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+				<code>
+...
+.container p {
+	padding: 15px 35px;
+}
+...
+		</code>
+		</pre>
+            </div>
+          </section>
+          <section>
+            <h3>Math. Result</h3>
+            <div class="code picture">
+              <h4>output before</h4>
+              <img src="./deck/nesting.png" alt="page with nesting" />
+              <h4>output after</h4>
+              <img src="./deck/math.png" alt="page with math" />
+            </div>
+          </section>
+          <section>
+						<h3>Color operations</h3>
+						<div class="wrapper">
+            <div class="code">
+              <h4>style.less</h4>
+              <pre class="less">
+							<code>
+//Variables
+
+@color: lightgreen;
+@blue: blue;
+@yellow: yellow;
+
+...
+.box{
+		background-color: @color;
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+}
+.darken {
+		background-color: darken(@color,20%);
+}
+.hue {
+		background-color: spin(@color, 123);
+}
+.mix {
+		background-color: mix(@blue, @yellow, 50%);
+}
+...
+			</code></pre>
+            </div>
+            <div class="code">
+              <h4>style.css</h4>
+              <pre class="less">
+					<code>
+...
+.box {
+	background-color: lightgreen;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+.darken {
+	background-color: #001a00;
+}
+.hue {
+	background-color: #060080;
+}
+.mix {
+	background-color: #808080;
+}
+...
+			</code>
+			</pre>
+						</div>
+						</div>
+          </section>
+          <section>
+            <h3>Colors. Result</h3>
+            <div class="code picture">
+              <h4>output</h4>
+              <img src="./deck/squares.png" alt="page with squares" />
+            </div>
+          </section>
+          <section>
+            <h3>Importing</h3>
+            <div class="code">
+              <pre class="less">
+								<code>
+@import "library"; // library.less
+@import "typo.css";
+				</code></pre>
+            </div>
+          </section>
+          <section>
+						<h3>Importing</h3>
+						<div class="wrapper">
+            <div class="code">
+              <pre class="less">
+								<code>
+// library.less
+
+@dark-blue: rgba(17, 75, 95, 1);
+@cyan: rgba(2, 128, 144, 1);
+@white: rgba(228, 253, 225, 1);
+@blue: rgba(69, 105, 144, 1);
+@orange: rgba(244, 91, 105, 1);
+
+@lighter-blue: lighten(@blue, 20%);
+@darker-blue: darken(@blue, 30%);
+
+@background-color: @dark-blue;
+@component-color: @white;
+@highlight-color: @orange;
+@primary-color: @blue;
+@primary-hover: @lighter-blue;
+@secondary-color: @cyan;
+
+@primary-font: 16px/20px Arial, 
+		Helvetica, sans-serif;
+
+//...
+				</code></pre>
+            </div>
+            <div class="code">
+              <pre class="less">
+						<code>
+								@import "library"; // library.less
+@import "typo.css";
+
+// ...
+
+.main-article {
+		font: @primary-font;
+		color: @primary-color;
+}
+
+input.btn-primary {
+		background-color: @primary-color;
+		border-color: @secondary-color;
+		
+		&:hover {
+				border-color: @highlight-color;
+		}
+}
+
+// ...
+				</code>
+				</pre>
+						</div>
+						</div>
+          </section>
+          <section>
+            <h3>How to install less:</h3>
+            <div class="code">
+              <h4>node.js</h4>
+              <pre class="less">
+								<code>
+npm install -g less
+				</code></pre>
+            </div>
+            <h3>Convert less to css:</h3>
+            <div class="code">
+              <h4>node.js</h4>
+              <pre class="less">
+							<code>
+lessc styles.less > styles.css
+			</code></pre>
+            </div>
+          </section>
+        </section>
+        <section><h2>Thank for your attention!</h2></section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          {
+            src: "plugin/highlight/highlight.js",
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
 </html>
