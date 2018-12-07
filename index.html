@@ -10,8 +10,8 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/sky.css" />
-
+    <link rel="stylesheet" href="css/theme/myStyles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css" />
     <link rel="stylesheet" href="lib/css/myStyle.css" />
@@ -61,13 +61,13 @@
             <p>Less is CSS, with just a little more</p>
           </section>
           <section>
-						<h3>Prepering</h3>
-						<div class="wrapper">
+						<h3>Preparing</h3>
+						<div>
             <div class="code">
               <h4>index.html</h4>
-              <pre class="less">
-								<code>
-&lt;!DOCTYPE html&gt;
+              <pre class="html">
+                <!-- <img src="./deck/preparing start.png" alt="index page"> -->
+<code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Preprocessor Less&lt;/title&gt;
@@ -76,13 +76,11 @@
 &lt;body&gt;
 
 &lt;header&gt;
-	&lt;h1&gt;LESS is CSS with a little more&lt;/h1&gt;
+	&lt;h1&gt;LESS is CSS&lt;/h1&gt;
 &lt;/header&gt;
 
 &lt;div class="container"&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, 
-consectetur adipisicing elit, sed do eiusmod.
-	&lt;/p&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;footer&gt;
@@ -90,9 +88,10 @@ consectetur adipisicing elit, sed do eiusmod.
 &lt;/footer&gt;
 
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;</code>
+</pre>
             </div>
-            <div class="code">
+            <!-- <div class="code">
               <h4>style.less</h4>
               <pre class="less">
 	<code>
@@ -105,7 +104,7 @@ consectetur adipisicing elit, sed do eiusmod.
 @border: 2px solid @color-text;
 	</code>
 </pre>
-						</div>
+						</div> -->
 					</div>
           </section>
           <section>
@@ -121,28 +120,29 @@ consectetur adipisicing elit, sed do eiusmod.
 @color-header: #00f;  			
 @stringVar:" with a little more";  	
 @fontSize: 24px; 
+@border: 2px solid @color-text;
 
 
 h1 {
-	color: @color-header;
+  color: @color-header;
 	font-size: @fontSize;
 	text-align: center;  
 }
 footer {
-	color: @color-header;
+  color: @color-header;
 }</code></pre>
             </div>
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-		<code>
+		<code class="code-block-two">
 h1 {
-	color: #00f;
+  color: #00f;
 	font-size: 24px;
 	text-align: center;
 }
 footer {
-	color: #00f;
+  color: #00f;
 }
 		</code>
 	</pre>
@@ -164,36 +164,33 @@ footer {
             <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-				<code>
-//Mixins
+<code>//Mixins
 .border {
-	border-top: 1px solid @color-header;
-	border-bottom: 2px dotted @color-header;    
+  border-top: 1px solid @color;
+  border-bottom: 2px dotted @color;    
 }
-
 
 h1 {
-	color: @color-header;
-	font-size: @fontSize;
-	.border();
-	text-align: center;  
+  color: @color-header;
+  font-size: @fontSize;
+  .border();
+  text-align: center;  
 }
 footer {
-	color: @color-header;
+  color: @color-header;
 }
 </code></pre>
             </div>
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-		<code>
-...
+<code class="code-block-two">...
 h1 {
-	color: #00f;
-	font-size: 24px;
-	text-align: center;
-	border-top: 1px solid #00f;
-	border-bottom: 2px dotted #00f;
+  color: #00f;
+  font-size: 24px;
+  text-align: center;
+  border-top: 1px solid #00f;
+  border-bottom: 2px dotted #00f;
 }
 ...
 </code>
@@ -216,23 +213,21 @@ h1 {
             <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-				<code>
-//Mixins
+<code>//Mixins
 .button(@width, @border-radius) {
-	width:@width;
-	height:@width*.5;
-	border: 1px solid green;
-	border-radius: @border-radius;
+  width:@width;
+  height:@width*.5;
+  border: 1px solid green;
+  border-radius: @border-radius;
 }
-
 .btn-small {
-	.button(100px, 5px);
+  .button(100px, 5px);
 }
 .btn-normal {
-	.button(200px, 20px);
+  .button(200px, 20px);
 }
 .btn-big {
-	.button(500px, 40px);
+  .button(500px, 40px);
 }
 </code></pre>
 						</div>
@@ -240,24 +235,23 @@ h1 {
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-		<code>
-.btn-small {
-	width: 100px;
-	height: 50px;
-	border: 1px solid green;
-	border-radius: 5px;
+<code  class="code-block-two">.btn-small {
+  width: 100px;
+  height: 50px;
+  border: 1px solid green;
+  border-radius: 5px;
 }
 .btn-normal {
-	width: 200px;
-	height: 100px;
-	border: 1px solid green;
-	border-radius: 20px;
+  width: 200px;
+  height: 100px;
+  border: 1px solid green;
+  border-radius: 20px;
 }
 .btn-big {
-	width: 500px;
-	height: 250px;
-	border: 1px solid green;
-	border-radius: 40px;
+  width: 500px;
+  height: 250px;
+  border: 1px solid green;
+  border-radius: 40px;
 }
 </code>
 </pre>
@@ -280,20 +274,18 @@ h1 {
 	           <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-					<code>
-...
+<code>...
 header {
-
-	h1 {
-		color: @color-header;
+  h1 {
+    color: @color-header;
 		font-size: @fontSize;
 		text-align: center;
-		.border();
-
-		&:after {
-			content: @stringVar;
-		}
-	}
+    .border();
+    
+    &:after {
+      content: @stringVar;
+    }
+  }
 }
 ...
 	</code></pre>
@@ -301,8 +293,7 @@ header {
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-			<code>
-...	
+<code class="code-block-two">...	
 header h1 {
 color: #00f;
 font-size: 24px;
@@ -331,41 +322,40 @@ header h1:after {
           </section>
           <section>
             <h3>Math operations</h3>
-            <div class="code">
+            <div class="code-center">
               <h4>style.less</h4>
               <pre class="less">
-			<code>
-5cm + 10mm; // result is 6cm
+<code>5cm + 10mm; // result is 6cm
 2 - 3cm - 5mm; // result is -1.5cm
 
 // conversion is impossible
 2 + 5px - 3cm; // result is 4px
 			</code></pre>
             </div>
+            <div class="wrapper">
             <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-						<code>
-...
+<code>...
 .container {
-	p {
-		padding: @padding @padding+20px;
-	}
+  p {
+    padding: @padding @padding+20px;
+  }
 }
 ...
-		</code></pre>
+</code></pre>
             </div>
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-				<code>
-...
+<code class="code-block-two">...
 .container p {
-	padding: 15px 35px;
+  padding: 15px 35px;
 }
 ...
 		</code>
-		</pre>
+    </pre></div>
+    
             </div>
           </section>
           <section>
@@ -383,51 +373,48 @@ header h1:after {
             <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-							<code>
-//Variables
+<code>//Variables
 
 @color: lightgreen;
 @blue: blue;
 @yellow: yellow;
-
 ...
 .box{
-		background-color: @color;
-		width: 100px;
-		height: 100px;
-		display: inline-block;
+  background-color: @color;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 .darken {
-		background-color: darken(@color,20%);
+  background-color: darken(@color,20%);
 }
 .hue {
-		background-color: spin(@color, 123);
+  background-color: spin(@color, 123);
 }
 .mix {
-		background-color: mix(@blue, @yellow, 50%);
+  background-color: mix(@blue, @yellow, 50%);
 }
 ...
-			</code></pre>
+</code></pre>
             </div>
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
-					<code>
-...
+<code  class="code-block-two">...
 .box {
-	background-color: lightgreen;
-	width: 100px;
-	height: 100px;
-	display: inline-block;
+  background-color: lightgreen;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 .darken {
-	background-color: #001a00;
+  background-color: #001a00;
 }
 .hue {
-	background-color: #060080;
+  background-color: #060080;
 }
 .mix {
-	background-color: #808080;
+  background-color: #808080;
 }
 ...
 			</code>
@@ -444,7 +431,7 @@ header h1:after {
           </section>
           <section>
             <h3>Importing</h3>
-            <div class="code">
+            <div class="code-center">
               <pre class="less">
 								<code>
 @import "library"; // library.less
@@ -457,14 +444,11 @@ header h1:after {
 						<div class="wrapper">
             <div class="code">
               <pre class="less">
-								<code>
-// library.less
+<code>// library.less
 
 @dark-blue: rgba(17, 75, 95, 1);
 @cyan: rgba(2, 128, 144, 1);
 @white: rgba(228, 253, 225, 1);
-@blue: rgba(69, 105, 144, 1);
-@orange: rgba(244, 91, 105, 1);
 
 @lighter-blue: lighten(@blue, 20%);
 @darker-blue: darken(@blue, 30%);
@@ -473,46 +457,42 @@ header h1:after {
 @component-color: @white;
 @highlight-color: @orange;
 @primary-color: @blue;
-@primary-hover: @lighter-blue;
-@secondary-color: @cyan;
 
 @primary-font: 16px/20px Arial, 
 		Helvetica, sans-serif;
 
-//...
-				</code></pre>
+...
+</code></pre>
             </div>
             <div class="code">
               <pre class="less">
-						<code>
-								@import "library"; // library.less
+<code  class="code-block-two">@import "library";
+// library.less
 @import "typo.css";
-
 // ...
 
 .main-article {
-		font: @primary-font;
-		color: @primary-color;
+  font: @primary-font;
+  color: @primary-color;
 }
 
 input.btn-primary {
-		background-color: @primary-color;
-		border-color: @secondary-color;
-		
-		&:hover {
-				border-color: @highlight-color;
-		}
+  background-color: @primary-color;
+  border-color: @secondary-color;
+  
+  &:hover {
+    border-color: @highlight-color;
+  }
 }
-
 // ...
-				</code>
+</code>
 				</pre>
 						</div>
 						</div>
           </section>
           <section>
             <h3>How to install less:</h3>
-            <div class="code">
+            <div class="code-center">
               <h4>node.js</h4>
               <pre class="less">
 								<code>
@@ -520,7 +500,7 @@ npm install -g less
 				</code></pre>
             </div>
             <h3>Convert less to css:</h3>
-            <div class="code">
+            <div class="code-center">
               <h4>node.js</h4>
               <pre class="less">
 							<code>

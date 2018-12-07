@@ -1,8 +1,36 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-h4 {
-    text-align: left;
+/* h4 {
+  text-align: left;
+}
+.reveal code {
+  font-family: monospace;
+}
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  word-wrap: normal;
+} */
+.html code {
+    font-size: 16px;
+    line-height: 1.1;
+}
+.less code {
+    font-size: 16px;
+    line-height: 1.1;
+    width: 430px;
+}
+.code-block-two {
+    width: 333px;
+}
+.code-center pre {
+    display: flex;
+    justify-content: center;
+}
+img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
