@@ -54,10 +54,10 @@
         <section>
           <section>
             <h3>Types of css preprocessors:</h3>
-            <img src="./deck/less styl sas.png" alt="Less sas stylus" />
+            <img src="images/less styl sas.png" alt="Less sas stylus" />
           </section>
           <section>
-            <img src="./deck/less.png" alt="less picture" />
+            <img src="images/less.png" alt="less picture" />
             <p>Less is CSS, with just a little more</p>
           </section>
           <section>
@@ -66,7 +66,7 @@
             <div class="code">
               <h4>index.html</h4>
               <pre class="html">
-                <!-- <img src="./deck/preparing start.png" alt="index page"> -->
+                <!-- <img src="images/preparing start.png" alt="index page"> -->
 <code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -113,8 +113,7 @@
             <div class="code">
               <h4>style.less</h4>
               <pre class="less">
-					<code>
-//Variables
+					<code>//Variables
 
 @color-text: gray; 			
 @color-header: #00f;  			
@@ -122,12 +121,12 @@
 @fontSize: 24px; 
 @border: 2px solid @color-text;
 
-
 h1 {
   color: @color-header;
-	font-size: @fontSize;
-	text-align: center;  
+  font-size: @fontSize;
+  text-align: center;  
 }
+
 footer {
   color: @color-header;
 }</code></pre>
@@ -138,12 +137,19 @@ footer {
 		<code class="code-block-two">
 h1 {
   color: #00f;
-	font-size: 24px;
-	text-align: center;
+  font-size: 24px;
+  text-align: center;
 }
+
 footer {
   color: #00f;
 }
+
+
+
+
+
+
 		</code>
 	</pre>
 						</div>
@@ -153,9 +159,9 @@ footer {
             <h3>Variables. Result</h3>
             <div class="code picture">
               <h4>output before</h4>
-              <img src="./deck/start.png" alt="index page" />
+              <img src="images/start.png" alt="index page" />
               <h4>output after</h4>
-              <img src="./deck/variable.png" alt="page with variables" />
+              <img src="images/variable.png" alt="page with variables" />
             </div>
           </section>
           <section>
@@ -176,6 +182,7 @@ h1 {
   .border();
   text-align: center;  
 }
+
 footer {
   color: @color-header;
 }
@@ -185,14 +192,21 @@ footer {
               <h4>style.css</h4>
               <pre class="less">
 <code class="code-block-two">...
-h1 {
+
+  h1 {
   color: #00f;
   font-size: 24px;
   text-align: center;
   border-top: 1px solid #00f;
   border-bottom: 2px dotted #00f;
 }
+
 ...
+
+
+
+
+
 </code>
 </pre>
 						</div>
@@ -202,9 +216,9 @@ h1 {
             <h3>Mixins. Result</h3>
             <div class="code picture">
               <h4>output before</h4>
-              <img src="./deck/variable.png" alt="page with variables" />
+              <img src="images/variable.png" alt="page with variables" />
               <h4>output after</h4>
-              <img src="./deck/mixins.png" alt="page with mixins" />
+              <img src="images/mixins.png" alt="page with mixins" />
             </div>
           </section>
           <section>
@@ -214,6 +228,7 @@ h1 {
               <h4>style.less</h4>
               <pre class="less">
 <code>//Mixins
+
 .button(@width, @border-radius) {
   width:@width;
   height:@width*.5;
@@ -229,6 +244,7 @@ h1 {
 .btn-big {
   .button(500px, 40px);
 }
+
 </code></pre>
 						</div>
 						
@@ -263,7 +279,7 @@ h1 {
             <div class="code picture">
               <h4>output</h4>
               <img
-                src="./deck/buttons.png"
+                src="images/buttons.png"
                 alt="page with mixins with parameters"
               />
             </div>
@@ -278,35 +294,36 @@ h1 {
 header {
   h1 {
     color: @color-header;
-		font-size: @fontSize;
-		text-align: center;
+    font-size: @fontSize;
+    text-align: center;
     .border();
     
-    &:after {
+    &::after {
       content: @stringVar;
     }
   }
 }
-...
-	</code></pre>
+...	
+</code></pre>
             </div>
             <div class="code">
               <h4>style.css</h4>
               <pre class="less">
 <code class="code-block-two">...	
 header h1 {
-color: #00f;
-font-size: 24px;
-text-align: center;
-border-top: 1px solid #00f;
-border-bottom: 2px dotted #00f;
+  color: #00f;
+  font-size: 24px;
+  text-align: center;
+  border-top: 1px solid #00f;
+  border-bottom: 2px dotted #00f;
 }
 
-header h1:after {
-	content: " with a little more";
+header h1::after {
+  content: " with a little more";
 }
+
 ...
-	</code>
+</code>
 	</pre>
 						</div>
 						</div>
@@ -315,9 +332,9 @@ header h1:after {
             <h3>Nesting. Result</h3>
             <div class="code picture">
               <h4>output before</h4>
-              <img src="./deck/mixins.png" alt="page with mixins" />
+              <img src="images/mixins.png" alt="page with mixins" />
               <h4>output after</h4>
-              <img src="./deck/nesting.png" alt="page with nesting" />
+              <img src="images/nesting.png" alt="page with nesting" />
             </div>
           </section>
           <section>
@@ -353,6 +370,7 @@ header h1:after {
   padding: 15px 35px;
 }
 ...
+
 		</code>
     </pre></div>
     
@@ -362,9 +380,9 @@ header h1:after {
             <h3>Math. Result</h3>
             <div class="code picture">
               <h4>output before</h4>
-              <img src="./deck/nesting.png" alt="page with nesting" />
+              <img src="images/nesting.png" alt="page with nesting" />
               <h4>output after</h4>
-              <img src="./deck/math.png" alt="page with math" />
+              <img src="images/math.png" alt="page with math" />
             </div>
           </section>
           <section>
@@ -407,15 +425,19 @@ header h1:after {
   height: 100px;
   display: inline-block;
 }
+
 .darken {
   background-color: #001a00;
 }
+
 .hue {
   background-color: #060080;
 }
+
 .mix {
   background-color: #808080;
 }
+
 ...
 			</code>
 			</pre>
@@ -426,7 +448,7 @@ header h1:after {
             <h3>Colors. Result</h3>
             <div class="code picture">
               <h4>output</h4>
-              <img src="./deck/squares.png" alt="page with squares" />
+              <img src="images/squares.png" alt="page with squares" />
             </div>
           </section>
           <section>
@@ -466,11 +488,10 @@ header h1:after {
             </div>
             <div class="code">
               <pre class="less">
-<code  class="code-block-two">@import "library";
-// library.less
+<code  class="code-block-two">@import "library"; // library.less
 @import "typo.css";
-// ...
 
+...
 .main-article {
   font: @primary-font;
   color: @primary-color;
@@ -484,7 +505,7 @@ input.btn-primary {
     border-color: @highlight-color;
   }
 }
-// ...
+...
 </code>
 				</pre>
 						</div>
